@@ -33,10 +33,11 @@ modules:
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: dnf
-    files:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-    keys:
-      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    repos:
+      files:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+      keys:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
       packages:
         - brave-browswer
