@@ -31,15 +31,15 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-  - type: rpm-ostree
-    repos:
+
+  - type: dnf
+    files:
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-    optfix:
-      - brave.com
     keys:
       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
-      - brave-browser
+      packages:
+        - brave-browswer
 
   - type: bling
     install:
